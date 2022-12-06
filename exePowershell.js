@@ -28,32 +28,15 @@ comando.on('exit', function (code) {
 */
 
 
-
-var path, node_ssh, ssh,
-fs
-fs = require('fs')
-path = require('path')
-node_ssh = require('node-ssh')
-ssh = new node_ssh()
+const {NodeSSH} = require('node-ssh');
+const ssh = new NodeSSH();
 ssh.connect(
     {
-        host: '', username: '', password: '',
+        host: '172.25.26.11', username: 'adminbot.contrasenas', password: 'Soporte365*',
     })
-    .then(function (response) { console.log(response) })
+    .then(function (response) { console.log(response.connect) })
 
 
-
-
-
-
-
-
-
-
-
-
-
-    
 /*
     let conn = new ssh2.Client()
     return new Promise((resolve, reject) => {
